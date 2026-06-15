@@ -1,0 +1,17 @@
+=== Download Links ===
+
+1. Python 3.12+
+   https://www.python.org/downloads/
+
+2. 7-Zip
+   https://7-zip.org/
+
+3. Sideloadly (cài IPA lên iPhone)
+   https://sideloadly.io/
+
+4. libsubstrate.dylib (arm64)
+   http://cdn.hbang.ws/dl/libsubstrate_arm64.dylib
+   (rename thành libsubstrate.dylib sau khi tải)
+
+5. GitHub Desktop (optional, GUI cho git)
+   https://desktop.github.com/

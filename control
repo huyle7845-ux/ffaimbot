@@ -1,0 +1,9 @@
+Package: com.seraph.ffaimbot
+Name: FFAimbot MAX
+Depends: mobilesubstrate (>= 0.9.5000)
+Version: 2.123.1
+Architecture: iphoneos-arm
+Description: Aimbot + ESP for FreeFire MAX v2.123.1
+Maintainer: seraph
+Author: seraph
+Section: Tweaks
