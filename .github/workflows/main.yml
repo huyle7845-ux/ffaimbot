@@ -6,29 +6,32 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Theos
         run: |
           git clone --depth 1 --recursive https://github.com/theos/theos.git $HOME/theos
           echo "THEOS=$HOME/theos" >> $GITHUB_ENV
 
-      - name: Install ldid
+      - name: Install deps
         run: |
           brew install ldid
+          mkdir -p $HOME/theos/sdks
+
+      - name: Debug - show files
+        run: find . -maxdepth 3 -type f | head -30
 
       - name: Build
         run: |
-          export THEOS=$HOME/theos
-          ls -la
-          make package
+          make clean || true
+          make package DEBUG=0
           mkdir -p output
-          cp packages/*.deb output/ || true
-          cp .theos/obj/debug/FFAimbot.dylib output/ || true
+          cp packages/*.deb output/ || echo "no deb"
+          find . -name "*.dylib" -exec cp {} output/ \; || true
+          ls -la output/
 
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: FFAimbot
-          path: FFAimbotTweak/output/
+          path: output/
