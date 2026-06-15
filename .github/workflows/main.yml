@@ -20,8 +20,7 @@ jobs:
 
       - name: Build
         run: |
-          cd FFAimbotTweak
-          export THEOS=$HOME/theos
+          ls -la
           make package
           mkdir -p output
           cp packages/*.deb output/
