@@ -20,9 +20,7 @@ jobs:
 
       - name: Build
         run: |
-             ls -la
-          cd FFAimbotTweak 2>/dev/null || cd .
-          make package
+          cd FFAimbotTweak
           export THEOS=$HOME/theos
           make package
           mkdir -p output
