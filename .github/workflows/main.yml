@@ -20,10 +20,11 @@ jobs:
 
       - name: Build
         run: |
+          export THEOS=$HOME/theos
           ls -la
           make package
           mkdir -p output
-          cp packages/*.deb output/
+          cp packages/*.deb output/ || true
           cp .theos/obj/debug/FFAimbot.dylib output/ || true
 
       - name: Upload
